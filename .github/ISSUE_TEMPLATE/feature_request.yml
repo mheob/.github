@@ -6,13 +6,13 @@ body:
   - type: markdown
     attributes:
       value: |
-        Please make sure this feature request hasn't been already submitted by someone by looking through other open/closed issues
+        Please make sure this feature request hasn't been already submitted by someone by looking through other open/closed issues.
   
   - type: textarea
     id: description
     attributes:
       label: Description
-      description: Give us a brief description of the feature or enhancement you would like
+      description: Give us a brief description of the feature or enhancement you would like.
     validations:
       required: true
       
