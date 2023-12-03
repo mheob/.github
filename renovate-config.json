@@ -1,14 +1,19 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base", "group:allNonMajor"],
+  "extends": ["config:recommended"],
   "labels": ["dependencies"],
   "rangeStrategy": "bump",
   "major": {
     "dependencyDashboardApproval": true
   },
-  "stabilityDays": 3,
+  "packageRules": [
+    {
+      "matchDatasources": ["npm"],
+      "minimumReleaseAge": "3 days"
+    }
+  ],
   "prCreation": "not-pending",
   "prConcurrentLimit": 5,
   "timezone": "Europe/Berlin",
-  "schedule": ["before 4am on Tuesday"]
+  "schedule": ["every weekend"]
 }
