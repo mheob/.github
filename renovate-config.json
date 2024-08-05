@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended", "group:allNonMajor", "npm:unpublishSafe"],
+  "extends": ["config:recommended", "group:allNonMajor", "npm:unpublishSafe", ":disablePeerDependencies"],
   "labels": ["dependencies"],
   "prCreation": "not-pending",
   "prConcurrentLimit": 5,
