@@ -6,6 +6,28 @@ method = "squash"
 delete_branch_on_merge = true
 optimistic_updates = false
 
+# Kodiak merges every pull request whose checks pass, without an automerge
+# label, so a major update would land unreviewed. A pull request carrying one of
+# these labels waits instead, until someone merges it or removes the label.
+# "major \u26A0\uFE0F" is what the `github>mheob/renovate-config:labels` preset
+# puts on major updates; the others are common spellings of the same intent.
+# Kodiak compares label names exactly and case-sensitively, so a new spelling has
+# to be added verbatim. The first two entries differ only by U+FE0F, the emoji
+# variation selector, which is why both are written as escapes.
+blocking_labels = [
+	"major \u26A0\uFE0F",
+	"major \u26A0",
+	"major :warning:",
+	"major",
+	"Major",
+	"semver-major",
+	"semver: major",
+	"breaking",
+	"breaking change",
+	"breaking-change",
+	"Breaking Change",
+]
+
 [merge.message]
 title = "pull_request_title"
 body = "pull_request_body"
